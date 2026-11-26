@@ -3,38 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Weatherly | Live Weather</title>
 
-    <!-- Link CSS file -->
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <div class="weather-container">
-        <h1>🌤️ Weather App</h1>
+    <main class="weather-container">
 
-        <!-- Search section -->
-        <div class="search-box">
-            <input
-                type="text"
-                id="cityInput"
-                placeholder="Enter city name"
-            >
-            <button id="searchBtn">Search</button>
-        </div>
+        <header class="app-header">
+            <div class="brand">
+                <span class="brand-icon">☀️</span>
+                <h1>Weatherly<span>.</span></h1>
+            </div>
+            <p class="tagline">Your weather, beautifully presented.</p>
+        </header>
 
-        <!-- Weather information -->
-        <div id="weatherInfo" class="weather-info">
-            <h2 id="cityName">Welcome!</h2>
-            <p id="temperature">🌡️ Temperature: --°C</p>
-            <p id="description">☁️ Weather: --</p>
-            <p id="humidity">💧 Humidity: --%</p>
-            <p id="windSpeed">💨 Wind Speed: -- km/h</p>
-        </div>
+        <section class="search-section">
+            <label for="cityInput">EXPLORE WEATHER</label>
 
-    </div>
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Search for a city..."
+                    autocomplete="off"
+                >
+                <button id="searchBtn">Search</button>
+            </div>
+        </section>
 
-    <!-- Link JavaScript file -->
+        <section id="weatherInfo" class="weather-info">
+
+            <div class="location-header">
+                <div>
+                    <p class="eyebrow">CURRENT WEATHER</p>
+                    <h2 id="cityName">Welcome!</h2>
+                </div>
+                <span class="live-badge">
+                    <span class="live-dot"></span>
+                    LIVE
+                </span>
+            </div>
+
+            <div class="main-weather">
+                <div class="weather-icon" id="weatherIcon">🌤️</div>
+
+                <div class="temperature-area">
+                    <p id="temperature">--°C</p>
+                    <p id="description">Search a city to see its weather</p>
+                </div>
+            </div>
+
+            <div class="forecast-heading">HOURLY FORECAST</div>
+
+            <div id="hourlyForecast" class="hourly-forecast">
+                <p class="forecast-placeholder">Search a city to see the forecast.</p>
+            </div>
+            
+            <div class="forecast-heading weekly-heading">7-DAY FORECAST</div>
+
+            <div id="weeklyForecast" class="weekly-forecast">
+                <p class="forecast-placeholder">Your weekly forecast will appear here.</p>
+            </div>
+
+            <div class="details-heading">WEATHER DETAILS</div>
+
+            <div class="details-grid">
+
+                <div class="detail-card">
+                    <span class="detail-icon">💧</span>
+                    <div>
+                        <p>Humidity</p>
+                        <h3 id="humidity">--%</h3>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <span class="detail-icon">💨</span>
+                    <div>
+                        <p>Wind Speed</p>
+                        <h3 id="windSpeed">-- km/h</h3>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer class="app-footer">
+            <p>Made ☁️ for weather lovers</p>
+        </footer>
+
+    </main>
+
     <script src="script.js"></script>
+
 </body>
 </html>
